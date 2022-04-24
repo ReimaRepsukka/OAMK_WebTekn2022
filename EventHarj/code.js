@@ -21,6 +21,16 @@ function changeBg(){
 let sotu = document.getElementById("sotu");
 sotu.addEventListener("input", checkValidity);
 
+//Harj 4
+let button = document.createElement("button");
+let buttonWidth = 100;
+button.textContent = "OK";
+//Asetetaan inline-tyylillä napin leveys
+button.style.width = buttonWidth+"px";
+//Lisätään click-kuuntelija
+button.addEventListener("click", addWidth);
+//Lisätään nappi bodyyn
+document.querySelector("body").appendChild(button);
 
 /**
  * 
@@ -36,4 +46,10 @@ function checkValidity(event){
     }else{
         elem.classList.add("invalid");
     }
+}
+
+function addWidth(){
+    //Lisätään napin leveyttä aina 10 pikselillä
+    buttonWidth+=10;
+    button.style.width = buttonWidth+"px";
 }
